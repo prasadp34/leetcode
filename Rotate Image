@@ -1,0 +1,52 @@
+ /*In the Question Rotate Matrix , we need the basic knowledge of matrix eg:Transpose of matrix 
+Ex: Input:[ [1,2,3],[4,5,6],[7,8,9] ]
+O/p: [ [7,4,1],[8,5,6],[9,6,3] ]
+
+Algorithm:
+Step1->Take the transpose of the given matrix 
+for(i->n){
+    for(j->i){
+         swap(matrix[i][j] , matrix[j][i]);
+    }
+}
+
+Step2->Reverse the rows of the transpose matrix 
+for(i->n){
+   s=0
+   e=n-1
+   while(s<e){
+       swap(matrix[i][s],matrix[i][e])
+        s++;
+        e--;
+   }
+}
+
+Thats it hope you like it :)
+
+/*
+
+
+CODE-------------------------------------------------------------------------------------------------->
+
+
+
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<i;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        for(int i=0;i<matrix.size();i++){
+            int s=0;
+            int e=matrix.size()-1;
+            while(s<e){
+                swap(matrix[i][s],matrix[i][e]);
+                s++;
+                e--;
+            }
+        }
+        
+    }
+};
